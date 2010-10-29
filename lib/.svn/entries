@@ -1,0 +1,71 @@
+8
+
+dir
+1
+file:///svn/photoplate/lib
+file:///svn/photoplate
+
+
+
+2008-07-13T22:44:19.227376Z
+1
+nick
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+9b078778-a93e-4669-92a9-fcc9a78fa2fb
+
+XmlParser.php
+file
+0
+
+
+add
+
+BuilderException.php
+file
+
+
+
+
+2008-07-13T22:47:55.000000Z
+ce3177d9e34cee6fe5dcfc18a685f18e
+2008-07-13T22:44:19.227376Z
+1
+nick
+
+LibException.php
+file
+
+
+
+
+2008-07-13T22:47:55.000000Z
+f0d1a439159f6fea14876fd1f1ff1cb2
+2008-07-13T22:44:19.227376Z
+1
+nick
+
+ViewerBuilder.php
+file
+
+
+
+
+2008-07-13T22:47:55.000000Z
+74bc844c72829456441eae9cf6da7084
+2008-07-13T22:44:19.227376Z
+1
+nick
+

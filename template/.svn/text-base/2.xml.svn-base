@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<template>
+    <head>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+        <title></title>
+		<link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    </head>
+    <body>
+		<img alt="blah" src="banner.gif" width="420" height="100" />
+		<img alt="blah" src="banner_2.gif" />
+		<capture_select_list />
+		<div>
+			<br />
+		</div>
+		<div>
+			<image id="23" width="500"/>
+		</div>
+		<div>
+			<capture_title />
+		</div>
+		<div>
+			<capture_description />
+		</div>	
+	</body>
+</template>

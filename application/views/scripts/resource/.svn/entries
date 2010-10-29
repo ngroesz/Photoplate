@@ -1,0 +1,52 @@
+8
+
+dir
+1
+file:///svn/photoplate/application/views/scripts/resource
+file:///svn/photoplate
+
+
+
+2008-07-13T22:44:19.227376Z
+1
+nick
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+9b078778-a93e-4669-92a9-fcc9a78fa2fb
+
+form.phtml
+file
+
+
+
+
+2008-07-13T22:47:55.000000Z
+c7eaf3152988740ef0021ce7f00ffcc7
+2008-07-13T22:44:19.227376Z
+1
+nick
+
+list.phtml
+file
+
+
+
+
+2008-07-13T22:47:55.000000Z
+cc9a06660a2d43a397285fa10cdaea7c
+2008-07-13T22:44:19.227376Z
+1
+nick
+

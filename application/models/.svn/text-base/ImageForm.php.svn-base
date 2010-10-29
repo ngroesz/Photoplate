@@ -1,0 +1,43 @@
+<?php
+class ImageForm extends PP_Form
+{
+	public function __construct($options = null)
+	{
+		/* Zend/Form.php seems to indicate that $options could be an array or
+		or instance of Zend_Config. Here we assume that $options is an array, 
+		perhaps to bad effect? */
+		$options['name'] = 'image';
+		
+		if (!$options['legend']) {
+			$options['legend'] = 'Add Image';
+		}
+		
+		parent::__construct($options);
+				
+		$id = new PP_Form_Element_Hidden('id');
+		
+		$album_id = new PP_Form_Element_Hidden('album_id');
+
+		$this->setAttrib('enctype', 'multipart/form-data');
+		
+		$title = new PP_Form_Element_Text('title');
+		$title->setLabel('Title:')
+		->setRequired(true) 
+		->addFilter('StripTags')
+		->addFilter('StringTrim')
+		->addValidator('NotEmpty');
+		
+		$file = new PP_Form_Element_Text('image');
+		$file->class = 'formfile';
+		$file->setLabel('File:')
+			 ->addDecorators(array(
+				 array('ViewHelper', array('helper' => 'formFile')),
+             ));
+		
+		$submit = new PP_Form_Element_Submit('submit');
+		$submit->setAttrib('id', 'submitbutton');
+		
+		$this->addElements(array($id, $album_id, $title, $file, $submit));
+	}
+}
+		

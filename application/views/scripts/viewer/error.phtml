@@ -1,0 +1,7 @@
+<h1>The following error occured while building the viewer:</h1>
+<div>
+	<?php echo $this->error->error; ?>
+</div>
+<div>
+	<a href="<?php echo $this->url(array('controller' => 'viewer', 'action' => 'list', 'album_id' => $this->album_id), null, true); ?>"><-- Back To Viewers</a>
+</div>	

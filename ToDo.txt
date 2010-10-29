@@ -1,0 +1,13 @@
+* thumbnail auto-generate 
+* form validation
+* add unit tests
+
+* resource viewer (need to change form labels) 
+* viewer builder sets doctype
+* prepend parent views 
+
+* improve design
+* automated tests
+* applicatin login
+* Access Control Lists
+* forms to ViewScript?

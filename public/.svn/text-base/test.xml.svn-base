@@ -1,0 +1,25 @@
+<template>
+    <head>
+        <title>Test Page</title>
+    </head>
+    <body bgcolor="black">
+		<br/>
+		<br/>
+        Some text1
+       <description/>
+		<br />
+		<div>
+			<image id="23" width="500"/>
+		</div>
+		<description/>
+		<div>
+			<description/>
+		</div>
+		<div>
+			<font>
+				<capture_name/>
+				<description/>
+			</font>
+		</div>
+	</body>
+</template>

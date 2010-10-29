@@ -1,0 +1,76 @@
+8
+
+dir
+1
+file:///svn/photoplate/public
+file:///svn/photoplate
+
+
+
+2008-07-13T22:44:19.227376Z
+1
+nick
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+9b078778-a93e-4669-92a9-fcc9a78fa2fb
+
+viewers
+dir
+
+images
+dir
+
+css
+dir
+
+.htaccess
+file
+
+
+
+
+2008-07-13T22:47:55.000000Z
+bd8cf90a512c3500d407be0e1c34ddff
+2008-07-13T22:44:19.227376Z
+1
+nick
+
+js
+dir
+
+index.php
+file
+
+
+
+
+2008-07-13T22:47:55.000000Z
+67b2ad9f1f1f3839dc9212a5459aac70
+2008-07-13T22:44:19.227376Z
+1
+nick
+
+test.xml
+file
+
+
+
+
+2008-07-13T22:47:55.000000Z
+aa0c6089588cf7261a79798edcf1ad34
+2008-07-13T22:44:19.227376Z
+1
+nick
+

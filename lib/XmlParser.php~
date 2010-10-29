@@ -1,0 +1,98 @@
+<?php
+	
+class XmlParser {
+	var $dom;
+	private $handlers = array();
+	
+	function __construct($handler_class) {
+		$this->dom = new DomDocument();
+		$this->handler_class = $handler_class; 
+	}
+	
+	function parseXml($xml_file)
+	{
+		$this->dom->load($xml_file);
+		$root = $this->dom->documentElement;
+
+		//$doctype = $this->dom->createDocumentType("html","-//W3C//DTD XHTML 1.0 Strict//EN","http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd");
+		//$this->dom->docType();		
+		//DOMImplementation::createDocument();
+		
+		/* The root of the document should be <template> */
+		if (!($root->nodeName == 'template')) {
+			die("Document does not appear to be a valid template.\n");
+		}
+		
+		$this->processNodes($root);
+
+		$this->changeToHtml();
+	}
+	
+	function setHandler($element, $function) {
+		$this->handlers[$element] = $function;	
+	}
+	
+	private function changeToHtml() {
+		$root = $this->dom->documentElement;
+		
+		/* Now that the document is valid HTML, we replace the <template> element with <html> */
+		$html = $this->dom->createElement('html');
+		$html->setAttribute("xmlns", "http://www.w3.org/1999/xhtml");
+		$html->setAttribute("xml:lang", "en");
+		$html->setAttribute("lang", "en");
+	
+		/* It appears that the only way to change the root node (while perserving its children)
+		is to create a new node, copy the children from the old root node, delete the old root 
+		node, then add the new.
+		There is a dummy function called renameNode in the DOM API. When that is implemented, this
+		code could be simplified quite a bit. */
+		
+		$this->copyChildren($this->dom->documentElement, $html);
+		$this->dom->removeChild($this->dom->documentElement);
+		$this->dom->appendChild($html);
+	}
+	
+	private function copyChildren($node_from, $node_to) {
+		$children = $node_from->childNodes;
+		
+		foreach ($children as $child) {
+			$copy = $child->cloneNode();
+
+			if ($child->nodeType == XML_ELEMENT_NODE) {
+				$this->copyChildren($child, $copy);
+			}
+			$node_to->appendChild($copy);
+		}
+	}
+	
+	private function replaceElement($node) {
+		$children = $node->childNodes;
+		foreach ($children as $child) {
+			if ($child->nodeType == XML_ELEMENT_NODE) {
+				if (array_key_exists($child->nodeName, $this->handlers) && method_exists($this->handler_class, $this->handlers[$child->nodeName])) {
+					$method = $this->handlers[$child->nodeName];
+					$new_element = $this->handler_class->$method($this->dom, $child);
+					$node->replaceChild($new_element, $child);
+				}else {
+					$this->replaceElement($child);
+				}
+			}
+		}
+	}
+	
+	private function processNodes($node) {
+		$children = $node->childNodes;
+  		
+		/* We wish to recurse down through the nodes BEFORE we replace elements.
+		This is so that we don't lose any children. */
+		foreach ($children as $child) {
+			if($child->nodeType == XML_ELEMENT_NODE) {
+				$this->processNodes($child);
+			}
+		}
+		$this->replaceElement($node);	
+	}
+};
+
+?>
+

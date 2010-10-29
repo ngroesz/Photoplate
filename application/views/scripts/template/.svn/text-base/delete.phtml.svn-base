@@ -1,0 +1,4 @@
+<p>Are you sure you want to delete
+	'<?php echo $this->escape($this->template_name); ?>'?
+</p>
+<?php echo $this->form; ?>

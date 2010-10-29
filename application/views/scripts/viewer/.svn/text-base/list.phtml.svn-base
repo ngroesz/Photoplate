@@ -1,0 +1,56 @@
+<div id="head_link">	
+	<a href="<?php echo $this->url(array('controller' => 'album', 'action' => 'view', 'id' => $this->album_id), null, true); ?>"><-- Back To Album</a>
+</div>
+<table class="list">
+	<thead>
+		<tr>
+			<th colspan="4">
+				<div class="list_title">
+					Viewer List
+				</div>
+				<div class="action_link">
+					<?php if (!$this->all_templates_added) : ?>
+						<a href="<?php echo $this->url(array('controller' => 'viewer', 'action' => 'create', 'album_id' => $this->album_id), null, true); ?>">Add Viewer</a>
+					<?php endif ?>
+				</div>
+			</th>
+		</tr>
+<?php if (sizeof($this->viewers) < 1) : ?>
+	<tr>
+		<th>No viewers to list.</th>
+	</tr>
+	</thead>
+<?php else : ?>
+	<tr>
+		<th scope="col" class="name_col">Template</th>
+		<th scope="col" colspan="3">Action</th>
+	</tr>
+	</thead>
+	<tbody>
+	<?php foreach ($this->viewers as $viewer) : ?>
+		<tr>
+			<th scope="row" class="name_row">
+				<a href="<?php echo $this->url(array('controller' => 'viewer', 'action' => 'view', 'album_id' => $viewer->album_id, 'template_id' => $viewer->template_id), null, true); echo '">'; echo $this->escape($viewer->template_name); ?></a>
+			</td>
+			<td class="list_link">
+			<?php if ($viewer->built_on) : ?>
+				<?php echo "<a href=\"javascript:openUrl('/viewers/$viewer->album_id" . "_$viewer->template_id/', '$viewer->template_width', '$viewer->template_height');\">View</a>"; ?>
+			<?php else : ?>
+				-	
+			<?php endif; ?>
+			</td>
+			<td class="list_link">
+			<?php if ($viewer->template_data) : ?>
+				<a href="<?php echo $this->url(array('controller' => 'viewer', 'action' => 'build', 'album_id' => $viewer->album_id, 'template_id' => $viewer->template_id), null, true); ?>">Build</a>
+			<?php else : ?>
+				-
+			<?php endif; ?>
+			</td>	
+			<td class="list_link">
+				<a href="<?php echo $this->url(array('controller' => 'viewer', 'action' => 'delete', 'album_id' => $viewer->album_id, 'template_id' => $viewer->template_id), null, true); ?>">Delete</a>
+			</td>
+		</tr>
+	<?php endforeach; ?>
+	</tbody>
+<?php endif; ?>
+</table>

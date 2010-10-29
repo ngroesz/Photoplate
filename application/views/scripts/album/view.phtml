@@ -1,0 +1,21 @@
+<fieldset>
+	<legend>Album Details</legend>
+	<p class="action_link">
+		<a href="<?php echo $this->url(array('controller' => 'album', 'action' => 'edit', 'id' => $this->album->id), null, true); ?>">Edit</a>
+		<a href="<?php echo $this->url(array('controller' => 'album', 'action' => 'delete', 'id' => $this->album->id, 'return_to' => 'view'), null, true); ?>">Delete</a>
+		<br />
+		<a href="<?php echo $this->url(array('controller' => 'viewer', 'action' => 'list', 'album_id' => $this->album->id), null, true); ?>">Viewers</a>
+		<a href="<?php echo $this->url(array('controller' => 'image', 'action' => 'list', 'album_id' => $this->album->id), null, true); ?>">Images</a>
+	</p>
+	<p>
+		<label>Title:</label>
+		<?php echo $this->escape($this->album->title); ?>
+	</p>
+	<?php if ($this->album->description) : ?>
+		<p>
+			<label>Description:</label>
+			<?php echo $this->escape($this->album->description); ?>
+		</p>
+	<?php endif; ?>
+</fieldset>
+

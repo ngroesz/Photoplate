@@ -1,0 +1,46 @@
+<div id="head_link">	
+	<a href="<?php echo $this->url(array('controller' => 'album', 'action' => 'view', 'id' => $this->album_id), null, true); ?>"><-- Back To Album</a>
+</div>
+<?php if (sizeof($this->images) < 1) : ?>
+	<h2>No images.</h2>
+	<div>
+		<a href="<?php echo $this->url(array('controller' => 'image', 'action' => 'create', 'album_id' => $this->album_id), null, true); ?>">Add New Image</a>
+	</div>
+<?php else : ?>
+	<table class="list">
+		<thead>
+			<tr>
+				<th colspan="4">
+					<div class="list_title">
+						Image List
+					</div>
+					<div class="action_link">
+						<a href="<?php echo $this->url(array('controller' => 'image', 'action' => 'create', 'album_id' => $this->album_id), null, true); ?>">Add New Image</a>
+					</div>
+				</th>
+			</tr>
+			<tr>
+				<th scope="col" class="name_col">Name</th>
+				<th scope="col" colspan="3">Action</th>
+			</tr>
+		</thead>
+		<tbody>
+	<?php foreach($this->images as $image) : ?>
+			<tr>
+				<th scope="row" class="name_row">
+					<a href="<?php echo $this->url(array('controller' => 'image', 'action' => 'view', 'id' => $image->id), null, true); ?>"><?php echo $this->escape($image->title); ?></a>
+				</th>
+				<td class="list_link">
+					<a href="<?php echo $this->url(array('controller'=>'image', 'action'=>'edit', 'id'=>$image->id), null, true);?>">Edit</a>
+				</td>
+				<td class="list_link">
+					<?php echo $this->imageViewLinks[$image->id]; ?>
+				</td>
+				<td class="list_link">
+					<a href="<?php echo $this->url(array('controller' => 'image', 'action' => 'delete', 'id' => $image->id), null, true); ?>">Delete</a>
+				</td>
+			</tr>
+	<?php endforeach; ?>
+		</tbody>
+	</table>
+<?php endif; ?>

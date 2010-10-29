@@ -1,0 +1,16 @@
+body,html {
+	font-family: Verdana, sans-serif;
+	background: #bd7d53;
+}
+
+#capture_title {
+	font-weight: bold;
+}
+
+#list_and_image {
+	float: right;
+}
+
+#title_and_description {
+	float: left;
+}

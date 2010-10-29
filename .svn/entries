@@ -1,0 +1,53 @@
+8
+
+dir
+1
+file:///svn/photoplate
+file:///svn/photoplate
+
+
+
+2008-07-13T22:44:19.227376Z
+1
+nick
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+9b078778-a93e-4669-92a9-fcc9a78fa2fb
+
+log
+dir
+
+image
+dir
+
+photoplate_todo.txt
+file
+0
+
+
+add
+
+application
+dir
+
+lib
+dir
+
+template
+dir
+
+public
+dir
+

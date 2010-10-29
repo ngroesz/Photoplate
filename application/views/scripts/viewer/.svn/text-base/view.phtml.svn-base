@@ -1,0 +1,10 @@
+<p class="nav_link">
+	<a href="<?php echo $this->url(array('controller' => 'album', 'action' => 'view', 'id' => $this->viewer->album_id, 'view' => 'viewers'), null, true); ?>">Back To Viewer List</a>
+</p>
+<fieldset>
+	<legend>Viewer Details</legend>
+	<p>
+		<label>Template:</label>
+		<?php echo $this->escape($this->viewer->template_name); ?>
+	</p>
+</fieldset>

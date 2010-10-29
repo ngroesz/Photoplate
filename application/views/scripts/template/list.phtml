@@ -1,0 +1,51 @@
+<table class="list">
+	<thead>
+		<tr>
+			<th colspan="4">
+				<div class="list_title">
+					Template List
+				</div>
+				<div class="action_link">
+					<a href="<?php echo $this->url(array('controller' => 'template', 'action' => 'create'), null, true); ?>">Add New Template</a>
+				</div>
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+<?php if (sizeof($this->templates) < 1) : ?>
+	<tr>
+		<th>No templates to list</th>
+	</tr>
+<?php else : ?>
+	<tr>
+		<th scope="col" class="name_col">Name</th>
+		<th scope="col" colspan="3">Action</th>
+	</tr>
+	<?php foreach ($this->templates as $template) : ?>
+		<tr>
+			<th scope="row" class="name_row">
+				<a href="<?php echo $this->url(array('controller' => 'template', 'action' => 'view', 'id' => $template->id), null, true) 
+									. '">' 
+									. $this->escape($template->name) 
+									. '</a>' ?>
+			</td>
+			<td class="list_link">
+				<?php if ($template->data) : ?>
+					<?php $this->file_url = $this->url(array('controller' => 'template', 'action' => 'show.data', 'id' => $template->id), null, true); ?>
+					<?php echo "<a href=\"javascript:openUrl('$this->file_url', '600', '500')\">View</a>"; ?>
+				<?php else : ?>
+					-
+				<?php endif; ?>
+			</td>
+			<td class="list_link">
+				<a href="<?php echo $this->url(array('controller' => 'template', 'action' => 'edit', 'id' => $template->id), null, true); ?>">Edit</a>
+			</td>
+			<td class="list_link">
+				<a href="<?php echo $this->url(array('controller' => 'template', 'action' => 'delete', 'id' => $template->id), null, true); ?>">Delete</a>
+			</td>
+		</tr>
+	<?php endforeach; ?>
+<?php endif; ?>
+	</tbody>
+</table>
+	

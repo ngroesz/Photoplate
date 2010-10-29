@@ -1,0 +1,45 @@
+<p class="nav_link">
+	<a href="<?php echo $this->url(array('controller' => 'album', 'action' => 'view', 'id' => $this->image->album_id), null, true); ?>"><-- Back To Album</a>
+</p>
+<fieldset>
+	<legend>Image Details</legend>
+	<p class="action_link">
+		<?php echo $this->imageViewLink; ?>
+		<a href="<?php echo $this->url(array('controller' => 'image', 'action' => 'edit', 'id' => $this->image->id), null, true); ?>">Edit</a>
+		<a href="<?php echo $this->url(array('controller' => 'image', 'action' => 'delete', 'id' => $this->image->id, 'from' => 'viewImage'), null, true); ?>">Delete</a>
+		<br>
+		<?php if ($this->image->thumb_exists): ?>
+			<?php 
+				$this->thumb_url = $this->url(array('controller' => 'image', 'action' => 'show.thumb', 'id' => $this->image->id), null, true);
+				$width = $this->image->thumb_width + 10;
+				$height = $this->image->thumb_height + 10;
+				echo "<a href=\"javascript:openUrl('$this->thumb_url', '$width', '$height')\">View Thumbnail</a>"; 
+			?>
+		<?php endif; ?>
+	</p>
+	<p>
+		<label>Title:</label>
+		<?php echo $this->escape($this->image->title); ?>
+	</p>
+	<?php if ($this->image->width && $this->image->height): ?>
+	<p>
+		<label>Dimensions:</label>
+		<?php echo $this->image->width . "x" . $this->image->height; ?>
+	</p>
+	<?php endif; ?>
+	<?php if ($this->image->description): ?>
+	<p>
+		<label>Description:</label>
+		<?php echo $this->escape($this->image->description); ?>
+	</p>
+	<?php endif; ?>
+	<p>
+		<label>Created:</label>
+		<?php echo $this->displayDateLong($this->image->created_at); ?>
+	</p>	
+	<p>
+		<label>Updated:</label>
+		<?php echo $this->displayDateLong($this->image->updated_at); ?>
+	</p>
+</fieldset>
+

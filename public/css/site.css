@@ -1,0 +1,186 @@
+a {
+    color: #000000;
+}
+
+body,html {
+    margin: 0 5px;
+    font-family: Verdana, sans-serif;
+}
+
+caption {
+	font-size: 1.2em;
+	font-weight: bold;
+	border-top: 1px solid black;
+	border-right: 1px solid black;
+	border-left: 1px solid black;
+	border-bottom: 0;
+	margin: 0px;
+	padding: 0px;
+}
+
+div.action_link {
+	text-align: right;
+	font-size: .85em;
+	font-weight: normal;
+	font-size: 16px;
+	border-top: 0;
+}
+
+div.list_title {
+	font-size: 1.2em;
+	font-weight: bold;
+}
+
+fieldset {
+	width: 100%;
+	margin: 0 0 10px 0;
+	border: 1px solid black;
+	width: 578px;
+}
+
+form dt {
+    width: 120px;
+    display: block;
+    float: left;
+    clear: left;
+}
+
+form dd {
+    margin-left: 0;
+    float: left;
+}
+
+form label {
+	font-weight: bold;
+}
+
+form #submitbutton {
+	margin-top: 10px;
+    margin-left: 100px;
+}
+
+h1 {
+    font-size: 1.4em;
+    color: #000000;
+}
+
+h2 {
+	font-size: 1em;
+	color: #000;
+}
+
+label {
+	width: 10em;
+	float: left;
+	text-align: right;
+	margin-right: 0.5em;
+	display: block;
+}
+
+legend {
+	border: 1px solid black;
+	padding: 0.5em 3em;
+	font-size: 1.25em;
+}
+
+p {
+	margin: 0;
+}
+
+p.action_link {
+	text-align: right;
+	font-size: .85em;
+	font-weight: normal;
+	font-size: 16px;
+	border-top: 0;
+}
+
+p.file_missing {
+	color: red;
+}
+
+p.file_present {
+	color: #000;
+}
+
+p.nav_link {
+	margin-bottom: 10px;
+}
+
+p.submit {
+	text-align: center;
+}
+
+table.list {
+	border: 1px solid black;
+	width: 600px;
+	margin: 0;
+	border-spacing: 0;
+}
+
+td.list_link {
+	text-align: center;
+	white-space: nowrap;
+	border-left: none;
+	border-right: none;
+	padding-left: 5px;
+	padding-right: 5px;
+	font-size: 16px;
+}
+
+th {
+    text-align: center;
+	border-left: 0;
+	border-right: 0;
+	border-bottom: 1px solid black;
+	border-top: 0;
+}
+
+th.action_link {
+	border-top: 0;
+}
+
+th.name_col {
+	border-right: 1px solid black;
+	padding-left: 3px;
+	padding-right: 3px;
+	width: 100%;
+	font-size: 16px;
+}
+
+th.name_row {
+	border-left: 0;
+	border-right: 1px solid black;
+	border-bottom: 1px solid black;
+	border-top: 0;
+	border-bottom: 0;
+	font-weight: normal;
+	text-align: left;
+	padding-left: 3px;
+}
+
+ul {
+	list-style-type: none;
+	padding: 0;
+}
+
+.errors {
+	color: red;
+}
+
+#content {
+	margin-left: 150px;
+	margin-top: 20px;
+	width: 630px;
+}
+
+#head_link {
+	padding-bottom: 10px;
+}
+
+#nav {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 140px;
+}

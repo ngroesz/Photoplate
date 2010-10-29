@@ -1,0 +1,49 @@
+8
+
+dir
+1
+file:///svn/photoplate/application/views/scripts
+file:///svn/photoplate
+
+
+
+2008-07-13T22:44:19.227376Z
+1
+nick
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+9b078778-a93e-4669-92a9-fcc9a78fa2fb
+
+album
+dir
+
+viewer
+dir
+
+image
+dir
+
+index
+dir
+
+resource
+dir
+
+error
+dir
+
+template
+dir
+

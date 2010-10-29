@@ -1,0 +1,17 @@
+<fieldset>
+	<legend>Template Details</legend>
+	<p class="action_link">
+		<?php if ($this->template->data) : ?>
+			<?php $this->file_url = $this->url(array('controller' => 'template', 'action' => 'show.data', 'id' => $this->template->id), null, true); ?>
+			<?php echo "<a href=\"javascript:openUrl('$this->file_url', '600', '500')\">View</a>"; ?>
+		<?php endif; ?>
+		<a href="<?php echo $this->url(array('controller' => 'template', 'action' => 'edit', 'id' => $this->template->id), null, true); ?>">Edit</a>
+		<a href="<?php echo $this->url(array('controller' => 'template', 'action' => 'delete', 'id' => $this->template->id), null, true); ?>">Delete</a>
+		<br />
+		<a href="<?php echo $this->url(array('controller' => 'resource', 'action' => 'list', 'template_id' => $this->template->id), null, true); ?>">Resources</a>
+	</p>
+	<p>
+		<label>Name:</label>
+		<?php echo $this->escape($this->template->name); ?>
+	</p>
+</fieldset>

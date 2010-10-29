@@ -1,0 +1,31 @@
+<table class="list">
+<thead>
+	<tr>
+		<th colspan="3">
+			<div class="list_title">
+				Album List
+			</div>
+			<div class="action_link">
+				<a href="<?php echo $this->url(array('controller'=>'album','action'=>'create'), null, true);?>">Add new album</a>
+			</div>
+		</th>
+	</tr>
+</thead>	
+<tbody>
+<tr>
+    <th scope="col" class="name_col">Title</th>
+    <th scope="col" colspan="2">Action</th>
+</tr>
+
+<?php foreach($this->albums as $album) : ?>
+<tr>
+    <th scope="row" class="name_row">
+		<a href="<?php echo $this->url(array('controller'=>'album', 'action'=>'view', 'id' => $album->id), null, true); echo '">'.$this->escape($album->title);?></a>
+	</td>
+    <td class="list_link">
+        <a href="<?php echo $this->url(array('controller'=>'album', 'action'=>'edit', 'id'=>$album->id), null, true);?>">Edit</a>
+        <a href="<?php echo $this->url(array('controller'=>'album', 'action'=>'delete', 'id'=>$album->id), null, true);?>">Delete</a>
+    </td>
+</tr>
+<?php endforeach; ?>
+</table>

@@ -1,0 +1,7 @@
+function toggleThumbGenerate() {
+	if (document.image_form.generate_thumb.checked) {
+		document.getElementById("thumb").style.display = "none";
+	} else {
+		document.getElementById("thumb").style.display = "block";
+	}
+}
